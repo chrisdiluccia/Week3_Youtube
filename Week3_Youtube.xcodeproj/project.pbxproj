@@ -20,9 +20,6 @@
 		39133706182B42C900D419B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39133704182B42C900D419B5 /* InfoPlist.strings */; };
 		39133708182B42C900D419B5 /* Week3_YoutubeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39133707182B42C900D419B5 /* Week3_YoutubeTests.m */; };
 		39133713182B43B500D419B5 /* UIScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39133712182B43B500D419B5 /* UIScrollViewViewController.m */; };
-		39133717182B44FD00D419B5 /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 39133714182B44FD00D419B5 /* 1.jpeg */; };
-		39133718182B44FD00D419B5 /* 2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 39133715182B44FD00D419B5 /* 2.jpeg */; };
-		39133719182B44FD00D419B5 /* 3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 39133716182B44FD00D419B5 /* 3.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +51,6 @@
 		39133707182B42C900D419B5 /* Week3_YoutubeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Week3_YoutubeTests.m; sourceTree = "<group>"; };
 		39133711182B43B500D419B5 /* UIScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIScrollViewViewController.h; sourceTree = "<group>"; };
 		39133712182B43B500D419B5 /* UIScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIScrollViewViewController.m; sourceTree = "<group>"; };
-		39133714182B44FD00D419B5 /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
-		39133715182B44FD00D419B5 /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpeg; sourceTree = "<group>"; };
-		39133716182B44FD00D419B5 /* 3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,9 +123,6 @@
 		391336E9182B42C900D419B5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				39133714182B44FD00D419B5 /* 1.jpeg */,
-				39133715182B44FD00D419B5 /* 2.jpeg */,
-				39133716182B44FD00D419B5 /* 3.jpeg */,
 				391336EA182B42C900D419B5 /* Week3_Youtube-Info.plist */,
 				391336EB182B42C900D419B5 /* InfoPlist.strings */,
 				391336EE182B42C900D419B5 /* main.m */,
@@ -234,10 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39133719182B44FD00D419B5 /* 3.jpeg in Resources */,
-				39133718182B44FD00D419B5 /* 2.jpeg in Resources */,
 				391336ED182B42C900D419B5 /* InfoPlist.strings in Resources */,
-				39133717182B44FD00D419B5 /* 1.jpeg in Resources */,
 				391336F5182B42C900D419B5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +450,7 @@
 				3913370D182B42C900D419B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3913370E182B42C900D419B5 /* Build configuration list for PBXNativeTarget "Week3_YoutubeTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +459,7 @@
 				39133710182B42C900D419B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
