@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>49BC9793-1645-45DC-8222-5BA4E05C7CB5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Week3_Youtube</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>AB7B72BE-FC61-4207-A864-342AE732123A</key>
+		<string>https://github.com/chrisdiluccia/Week3_Youtube.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Week3_Youtube.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>AB7B72BE-FC61-4207-A864-342AE732123A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/chrisdiluccia/Week3_Youtube.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>AB7B72BE-FC61-4207-A864-342AE732123A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AB7B72BE-FC61-4207-A864-342AE732123A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Week3_Youtube</string>
+		</dict>
+	</array>
+</dict>
+</plist>

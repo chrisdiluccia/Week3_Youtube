@@ -90,16 +90,19 @@
         [authorLabel sizeToFit];
         authorLabel.textAlignment = NSTextAlignmentCenter;
         authorLabel.text = [name objectForKey:@"$t"];
-         NSLog(@"authorLabel is: %@", [name objectForKey:@"$t"]);
+        // NSLog(@"authorLabel is: %@", [name objectForKey:@"$t"]);
         //////author code END//////
         
         /////thumbnail image code START///////////
         NSDictionary * media = [e objectForKey:@"media$group"];
         NSArray * thumbArray = [media objectForKey:@"media$thumbnail"];
-        
         NSDictionary * thumb = [thumbArray objectAtIndex:0];
         UIImageView *thumbImage;
-        thumbImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[thumb objectForKey:@"url"]]];
+        thumbImage =
+        [[UIImageView alloc]initWithImage:
+         [UIImage imageWithData:
+          [NSData dataWithContentsOfURL:
+           [NSURL URLWithString:(NSString *) [thumb objectForKey:@"url"]]]]];
         /////thumbnail image code END///////////////////
         
         CGFloat yOrigin = entryCount * self.view.frame.size.width;
@@ -114,9 +117,9 @@
         authorLabel.center = CGPointMake(yOrigin + self.view.frame.size.width/2, self.view.frame.size.height-50);
         
         thumbImage.frame =
-        CGRectMake(yOrigin + self.view.frame.size.width/2, self.view.frame.size.height/2, self.view.frame.size.width * 0.9, self.view.frame.size.height * 0.5);
+        CGRectMake(yOrigin + self.view.frame.size.width*.05, self.view.frame.size.height*.2, self.view.frame.size.width * 0.9, self.view.frame.size.height * 0.5);
         thumbImage.contentMode = UIViewContentModeScaleAspectFit;
-        
+
         [scroll addSubview:titleLabel];
         [scroll addSubview:authorLabel];
         [scroll addSubview:thumbImage];
