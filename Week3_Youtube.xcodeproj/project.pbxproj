@@ -20,6 +20,7 @@
 		39133706182B42C900D419B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39133704182B42C900D419B5 /* InfoPlist.strings */; };
 		39133708182B42C900D419B5 /* Week3_YoutubeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39133707182B42C900D419B5 /* Week3_YoutubeTests.m */; };
 		39133713182B43B500D419B5 /* UIScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39133712182B43B500D419B5 /* UIScrollViewViewController.m */; };
+		39EEB0CD182F22FC00604D91 /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EEB0CC182F22FC00604D91 /* MyButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		39133707182B42C900D419B5 /* Week3_YoutubeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Week3_YoutubeTests.m; sourceTree = "<group>"; };
 		39133711182B43B500D419B5 /* UIScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIScrollViewViewController.h; sourceTree = "<group>"; };
 		39133712182B43B500D419B5 /* UIScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIScrollViewViewController.m; sourceTree = "<group>"; };
+		39EEB0CB182F22FC00604D91 /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
+		39EEB0CC182F22FC00604D91 /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 				391336F2182B42C900D419B5 /* YoutubeAppDelegate.m */,
 				39133711182B43B500D419B5 /* UIScrollViewViewController.h */,
 				39133712182B43B500D419B5 /* UIScrollViewViewController.m */,
+				39EEB0CB182F22FC00604D91 /* MyButton.h */,
+				39EEB0CC182F22FC00604D91 /* MyButton.m */,
 				391336F4182B42C900D419B5 /* Images.xcassets */,
 				391336E9182B42C900D419B5 /* Supporting Files */,
 			);
@@ -248,6 +253,7 @@
 				39133713182B43B500D419B5 /* UIScrollViewViewController.m in Sources */,
 				391336F3182B42C900D419B5 /* YoutubeAppDelegate.m in Sources */,
 				391336EF182B42C900D419B5 /* main.m in Sources */,
+				39EEB0CD182F22FC00604D91 /* MyButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

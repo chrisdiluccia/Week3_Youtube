@@ -73,30 +73,40 @@
         NSDictionary * title = [e objectForKey:@"title"];
         UILabel * titleLabel;//label to hold video titles;
         titleLabel = [[UILabel alloc]init];
-        titleLabel.font = [UIFont fontWithName: @"Helvetica-Bold" size: 16];
+        titleLabel.font = [UIFont fontWithName: @"Helvetica-Bold" size: 14];
         titleLabel.numberOfLines = 0;
         [titleLabel sizeToFit];
         titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.text = [title objectForKey:@"$t"];
         //////title code END//////
         
-        //////author code START//////
+        //////THIS IS BROKEN STILL author code START//////
         NSArray * author = [e objectForKey:@"author"];
         NSDictionary * name = [author objectAtIndex:0];
         UILabel * authorLabel;//label to hold video titles;
         authorLabel = [[UILabel alloc]init];
-        authorLabel.font = [UIFont fontWithName: @"Helvetica" size: 12];
+        authorLabel.font = [UIFont fontWithName: @"Helvetica" size: 14];
         authorLabel.numberOfLines = 0;
         [authorLabel sizeToFit];
-        authorLabel.textAlignment = NSTextAlignmentCenter;
-        authorLabel.text = [name objectForKey:@"$t"];
-        // NSLog(@"authorLabel is: %@", [name objectForKey:@"$t"]);
+        authorLabel.textAlignment = NSTextAlignmentLeft;
+        authorLabel.text = [NSString stringWithFormat:@"Author: %@", [name objectForKey:@"$t"]];
         //////author code END//////
         
+        //////View count code START//////
+        NSDictionary * viewCount = [e objectForKey:@"yt$statistics"];
+        UILabel * viewCountLabel;//label to hold view counts;
+        viewCountLabel = [[UILabel alloc]init];
+        viewCountLabel.font = [UIFont fontWithName: @"Helvetica" size: 14];
+        viewCountLabel.numberOfLines = 0;
+        [viewCountLabel sizeToFit];
+        viewCountLabel.textAlignment = NSTextAlignmentLeft;
+        viewCountLabel.text = [NSString stringWithFormat:@"View Count: %d", [viewCount objectForKey:@"viewCount"]];
+        //////View count code END//////
+        
         /////thumbnail image code START///////////
-        NSDictionary * media = [e objectForKey:@"media$group"];
-        NSArray * thumbArray = [media objectForKey:@"media$thumbnail"];
-        NSDictionary * thumb = [thumbArray objectAtIndex:0];
+        NSDictionary * mediaGroup = [e objectForKey:@"media$group"];
+        NSArray * mediaThumbnail = [mediaGroup objectForKey:@"media$thumbnail"];
+        NSDictionary * thumb = [mediaThumbnail objectAtIndex:0];
         UIImageView *thumbImage;
         thumbImage =
         [[UIImageView alloc]initWithImage:
@@ -105,24 +115,59 @@
            [NSURL URLWithString:(NSString *) [thumb objectForKey:@"url"]]]]];
         /////thumbnail image code END///////////////////
         
+        /////video description code START///////////////
+        NSDictionary * mediaDescription = [mediaGroup objectForKey:@"media$description"];
+        UILabel * descriptionLabel;//label to hold video description
+        descriptionLabel = [[UILabel alloc]init];
+        descriptionLabel.font = [UIFont fontWithName: @"Helvetica" size: 12];
+        descriptionLabel.numberOfLines = 5;
+        [descriptionLabel sizeToFit];
+        descriptionLabel.textAlignment = NSTextAlignmentLeft;
+        descriptionLabel.text = [NSString stringWithFormat:@"Description: %@", [mediaDescription objectForKey:@"$t"]];
+        
+        /////video description code END/////////////////
+        
+        /////Video URL code START///////////
+        NSArray * mediaContent = [mediaGroup objectForKey:@"media$content"];
+        NSDictionary * dictionaryContainingURL = [mediaContent objectAtIndex:0];
+        MyButton *urlButton = [[MyButton alloc]initWithFrame: CGRectMake(0, 0, 100, 50)];
+        [urlButton.titleLabel setTextColor:[UIColor blackColor]];
+        [urlButton.titleLabel setFont:[UIFont boldSystemFontOfSize:12]];
+        [urlButton setTitle:@"Watch Video" forState:UIControlStateNormal];
+        [urlButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        urlButton.url = [NSURL URLWithString:(NSString *) [dictionaryContainingURL objectForKey:@"url"]];
+        
+        /////Video URL code END///////////////////
+        
         CGFloat yOrigin = entryCount * self.view.frame.size.width;
         UIView *awesomeView = [[UIView alloc] initWithFrame:
                                CGRectMake(yOrigin, 0, self.view.frame.size.width, self.view.frame.size.height)];
         [scroll addSubview:awesomeView];
         
-        titleLabel.frame = CGRectMake(yOrigin + self.view.frame.size.width/2, 0, self.view.frame.size.width*.8, 100);
+        titleLabel.frame = CGRectMake(0, 0, self.view.frame.size.width*.8, 100);
         titleLabel.center = CGPointMake(yOrigin + self.view.frame.size.width/2, 50);
         
-        authorLabel.frame = CGRectMake(yOrigin + self.view.frame.size.width/2, 0, self.view.frame.size.width*.8, 100);
-        authorLabel.center = CGPointMake(yOrigin + self.view.frame.size.width/2, self.view.frame.size.height-50);
-        
         thumbImage.frame =
-        CGRectMake(yOrigin + self.view.frame.size.width*.05, self.view.frame.size.height*.2, self.view.frame.size.width * 0.9, self.view.frame.size.height * 0.5);
+        CGRectMake(yOrigin + self.view.frame.size.width*.05, self.view.frame.size.height*.15, self.view.frame.size.width * 0.9, self.view.frame.size.height * 0.5);
         thumbImage.contentMode = UIViewContentModeScaleAspectFit;
+        
+        authorLabel.frame = CGRectMake(0, 0, self.view.frame.size.width*.8, 100);
+        authorLabel.center = CGPointMake(yOrigin + self.view.frame.size.width/2, self.view.frame.size.height*.65);
+        
+        viewCountLabel.frame = CGRectMake(0, 0, self.view.frame.size.width*.8, 100);
+        viewCountLabel.center = CGPointMake(yOrigin + self.view.frame.size.width/2, self.view.frame.size.height*.7);
+        
+        descriptionLabel.frame = CGRectMake(0, 0, self.view.frame.size.width*.95, 100);
+        descriptionLabel.center = CGPointMake(yOrigin + self.view.frame.size.width/2, self.view.frame.size.height*.8);
+        
+        urlButton.center = CGPointMake(yOrigin + self.view.frame.size.width/2, self.view.frame.size.height*.95);
 
         [scroll addSubview:titleLabel];
-        [scroll addSubview:authorLabel];
         [scroll addSubview:thumbImage];
+        [scroll addSubview:authorLabel];
+        [scroll addSubview:viewCountLabel];
+        [scroll addSubview:descriptionLabel];
+        [scroll addSubview:urlButton];
     
         ////////////////////////////finally increment the count
         entryCount++;
@@ -131,6 +176,9 @@
      scroll.contentSize = CGSizeMake(self.view.frame.size.width * entry.count, self.view.frame.size.height);
      [self.view addSubview:scroll];
 }
-
-
+-(void) buttonAction:(id)sender
+{
+    [[UIApplication sharedApplication] openURL:[(MyButton *)sender url]];
+}
+    
 @end

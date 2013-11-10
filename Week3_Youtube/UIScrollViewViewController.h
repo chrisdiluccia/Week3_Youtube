@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyButton.h"
 
 @interface UIScrollViewViewController : UIViewController <UIScrollViewDelegate>{
     
