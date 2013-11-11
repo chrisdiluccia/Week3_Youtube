@@ -130,13 +130,16 @@
         /////Video URL code START///////////
         NSArray * mediaContent = [mediaGroup objectForKey:@"media$content"];
         NSDictionary * dictionaryContainingURL = [mediaContent objectAtIndex:0];
-        MyButton *urlButton = [[MyButton alloc]initWithFrame: CGRectMake(0, 0, 100, 50)];
+        MyButton *urlButton = [MyButton buttonWithType:UIButtonTypeRoundedRect];
+        urlButton.frame = CGRectMake(0, 0, self.view.frame.size.width * 0.3, self.view.frame.size.height * 0.1);
         [urlButton.titleLabel setTextColor:[UIColor blackColor]];
         [urlButton.titleLabel setFont:[UIFont boldSystemFontOfSize:12]];
         [urlButton setTitle:@"Watch Video" forState:UIControlStateNormal];
-        [urlButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        urlButton.hidden = NO;
+        [urlButton addTarget:self
+                      action:@selector(buttonAction:)
+            forControlEvents:UIControlEventTouchUpInside];
         urlButton.url = [NSURL URLWithString:(NSString *) [dictionaryContainingURL objectForKey:@"url"]];
-        
         /////Video URL code END///////////////////
         
         CGFloat yOrigin = entryCount * self.view.frame.size.width;
@@ -160,7 +163,7 @@
         descriptionLabel.frame = CGRectMake(0, 0, self.view.frame.size.width*.95, 100);
         descriptionLabel.center = CGPointMake(yOrigin + self.view.frame.size.width/2, self.view.frame.size.height*.8);
         
-        urlButton.center = CGPointMake(yOrigin + self.view.frame.size.width/2, self.view.frame.size.height*.95);
+        urlButton.center = CGPointMake(yOrigin + self.view.frame.size.width/2, self.view.frame.size.height*.9);
 
         [scroll addSubview:titleLabel];
         [scroll addSubview:thumbImage];
@@ -179,6 +182,7 @@
 -(void) buttonAction:(id)sender
 {
     [[UIApplication sharedApplication] openURL:[(MyButton *)sender url]];
+    NSLog(@"URL from button: %@", [(MyButton *)sender url]);
 }
     
 @end
