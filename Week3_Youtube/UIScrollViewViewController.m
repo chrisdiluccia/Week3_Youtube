@@ -124,7 +124,6 @@
         [descriptionLabel sizeToFit];
         descriptionLabel.textAlignment = NSTextAlignmentLeft;
         descriptionLabel.text = [NSString stringWithFormat:@"Description: %@", [mediaDescription objectForKey:@"$t"]];
-        
         /////video description code END/////////////////
         
         /////Video URL code START///////////
