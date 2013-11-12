@@ -82,7 +82,7 @@
         
         //////THIS IS BROKEN STILL author code START//////
         NSArray * author = [e objectForKey:@"author"];
-        NSDictionary * name = [author objectAtIndex:0];
+        NSDictionary * name = [[author objectAtIndex:0] objectForKey:@"name"];;
         UILabel * authorLabel;//label to hold video titles;
         authorLabel = [[UILabel alloc]init];
         authorLabel.font = [UIFont fontWithName: @"Helvetica" size: 14];
@@ -181,7 +181,6 @@
 -(void) buttonAction:(id)sender
 {
     [[UIApplication sharedApplication] openURL:[(MyButton *)sender url]];
-    NSLog(@"URL from button: %@", [(MyButton *)sender url]);
 }
     
 @end
