@@ -127,8 +127,8 @@
         /////video description code END/////////////////
         
         /////Video URL code START///////////
-        NSArray * mediaContent = [mediaGroup objectForKey:@"media$content"];
-        NSDictionary * dictionaryContainingURL = [mediaContent objectAtIndex:0];
+        NSArray * linkArray = [e objectForKey:@"link"];
+        NSDictionary * linkDictionary = [linkArray objectAtIndex:0];
         MyButton *urlButton = [MyButton buttonWithType:UIButtonTypeRoundedRect];
         urlButton.frame = CGRectMake(0, 0, self.view.frame.size.width * 0.3, self.view.frame.size.height * 0.1);
         [urlButton.titleLabel setTextColor:[UIColor blackColor]];
@@ -138,7 +138,7 @@
         [urlButton addTarget:self
                       action:@selector(buttonAction:)
             forControlEvents:UIControlEventTouchUpInside];
-        urlButton.url = [NSURL URLWithString:(NSString *) [dictionaryContainingURL objectForKey:@"url"]];
+        urlButton.url = [NSURL URLWithString:(NSString *) [linkDictionary objectForKey:@"href"]];
         /////Video URL code END///////////////////
         
         CGFloat yOrigin = entryCount * self.view.frame.size.width;
